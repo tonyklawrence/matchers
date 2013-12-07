@@ -7,7 +7,7 @@ public class ComplexType implements Type {
         this.value = value;
     }
 
-    public static ComplexType complex(int value) {
+    public static Type complex(int value) {
         return new ComplexType(value);
     }
 

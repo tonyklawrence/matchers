@@ -23,4 +23,9 @@ public class ContainsTest {
         assertThat(container(simple()), contains(instanceOf(SimpleType.class)));
         assertThat(container(simple(), complex(50)), contains(instanceOf(SimpleType.class), instanceOf(ComplexType.class)));
     }
+
+    @Test
+    public void conContainIntances() {
+        assertThat(container(simple()), contains(simple()));
+    }
 }

@@ -1,7 +1,7 @@
 package types;
 
 public class SimpleType implements Type {
-    public static SimpleType simple() {
+    public static Type simple() {
         return new SimpleType();
     }
 
