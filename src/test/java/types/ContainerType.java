@@ -9,8 +9,12 @@ import static com.googlecode.totallylazy.Sequences.sequence;
 public class ContainerType implements Type, Iterable<Type> {
     private final Sequence<Type> types;
 
-    public ContainerType(Type... types) {
+    private ContainerType(Type... types) {
         this.types = sequence(types);
+    }
+
+    public static ContainerType container(Type... types) {
+        return new ContainerType(types);
     }
 
     @Override

@@ -6,18 +6,21 @@ import types.Type;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
+import static types.ComplexType.complex;
+import static types.ContainerType.container;
+import static types.SimpleType.simple;
 
 public class ContainsTest {
     @Test
     public void isCorrectType() {
-        assertThat(new ContainerType(), is(instanceOf(Type.class)));
-        assertThat(new ContainerType(), is(instanceOf(ContainerType.class)));
+        assertThat(container(), is(instanceOf(Type.class)));
+        assertThat(container(), is(instanceOf(ContainerType.class)));
     }
 
     @Test
     @SuppressWarnings("unchecked")
     public void canContainTypes() {
-        assertThat(new ContainerType(new SimpleType()), contains(instanceOf(SimpleType.class)));
-        assertThat(new ContainerType(new SimpleType(), new ComplexType(50)), contains(instanceOf(SimpleType.class), instanceOf(ComplexType.class)));
+        assertThat(container(simple()), contains(instanceOf(SimpleType.class)));
+        assertThat(container(simple(), complex(50)), contains(instanceOf(SimpleType.class), instanceOf(ComplexType.class)));
     }
 }
