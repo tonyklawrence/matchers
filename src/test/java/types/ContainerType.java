@@ -21,4 +21,17 @@ public class ContainerType implements Type, Iterable<Type> {
     public Iterator<Type> iterator() {
         return types.iterator();
     }
+
+    @Override
+    public int hashCode() {
+        return types.hashCode();
+    }
+
+    @Override
+    @SuppressWarnings("SimplifiableIfStatement")
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        return types.equals(((ContainerType) o).types);
+    }
 }
