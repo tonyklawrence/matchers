@@ -1,7 +1,7 @@
 import org.junit.Test;
 
-import static org.hamcrest.CoreMatchers.*;
 import static org.hamcrest.MatcherAssert.assertThat;
+import static org.hamcrest.Matchers.*;
 
 public class InstanceOfTest {
     @Test
@@ -19,7 +19,6 @@ public class InstanceOfTest {
     }
 }
 
-interface Type {}
 class SimpleType implements Type {}
 class ComplexType implements Type {
     public ComplexType(int value) {}
