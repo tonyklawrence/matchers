@@ -22,6 +22,9 @@
   </target>
 
   <target name="test" description="Run all tests" depends="compile">
+      <mkdir dir="build/classes/test"/>
+      <javac srcdir="src/test/java" destdir="build/classes/test" classpathref="lib.test" includeantruntime="false"/>
+
       <junit printsummary="yes" haltonfailure="yes">
           <classpath>
               <path refid="lib.test"/>
