@@ -1,4 +1,7 @@
 import org.junit.Test;
+import types.ComplexType;
+import types.SimpleType;
+import types.Type;
 
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.Matchers.*;
@@ -17,9 +20,4 @@ public class InstanceOfTest {
 
         assertThat(new ComplexType(30), is(not(instanceOf(SimpleType.class))));
     }
-}
-
-class SimpleType implements Type {}
-class ComplexType implements Type {
-    public ComplexType(int value) {}
 }
