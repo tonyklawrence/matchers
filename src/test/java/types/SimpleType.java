@@ -16,4 +16,9 @@ public class SimpleType implements Type {
     public boolean equals(Object obj) {
         return obj instanceof SimpleType;
     }
+
+    @Override
+    public String toString() {
+        return "simple()";
+    }
 }

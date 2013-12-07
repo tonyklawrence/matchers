@@ -34,4 +34,9 @@ public class ContainerType implements Type, Iterable<Type> {
         if (o == null || getClass() != o.getClass()) return false;
         return types.equals(((ContainerType) o).types);
     }
+
+    @Override
+    public String toString() {
+        return "container(" + types + ")";
+    }
 }

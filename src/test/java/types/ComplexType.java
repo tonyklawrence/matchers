@@ -20,4 +20,9 @@ public class ComplexType implements Type {
     public boolean equals(Object obj) {
         return obj instanceof ComplexType && ((ComplexType) obj).value == value;
     }
+
+    @Override
+    public String toString() {
+        return "complex(" + value + ")";
+    }
 }
