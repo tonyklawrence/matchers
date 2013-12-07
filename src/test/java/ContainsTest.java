@@ -15,6 +15,7 @@ public class ContainsTest {
     }
 
     @Test
+    @SuppressWarnings("unchecked")
     public void canContainTypes() {
         assertThat(new ContainerType(new SimpleType()), contains(instanceOf(SimpleType.class)));
         assertThat(new ContainerType(new SimpleType(), new ComplexType(50)), contains(instanceOf(SimpleType.class), instanceOf(ComplexType.class)));
