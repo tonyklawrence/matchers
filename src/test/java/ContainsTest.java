@@ -25,7 +25,7 @@ public class ContainsTest {
     }
 
     @Test
-    public void conContainIntances() {
+    public void conContainInstances() {
         assertThat(container(simple()), contains(simple()));
         assertThat(container(complex(10), complex(20)), contains(complex(10), complex(20)));
         assertThat(container(simple(), container(complex(10))), contains(simple(), container(complex(10))));
